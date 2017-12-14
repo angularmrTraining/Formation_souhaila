@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import {ContactService} from './contact.service';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ContactformComponent } from './contactform/contactform.component';
-import { ContactlistComponent } from './contactlist/contactlist.component';
+import { ContactslistComponent } from './contactslist/contactslist.component';
 import { MenuComponent } from './menu/menu.component';
+import { HttpModule } from '@angular/http';
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -15,14 +17,18 @@ import { MenuComponent } from './menu/menu.component';
     AppComponent,
     AboutComponent,
     ContactformComponent,
-    ContactlistComponent,
+    ContactslistComponent,
     MenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule
+
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
