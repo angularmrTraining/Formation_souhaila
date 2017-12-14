@@ -1,3 +1,26 @@
-<p>
-  contactslist works!
-</p>
+
+<div class="row">
+  <div class="card text-white bg-info md-3" style="width: 20rem;" *ngFor="let contact of contacts" >
+    <img class="card-img-top" src="..\assets\face-avatar-icon.png" alt="person image">
+    <div class="card-body">
+      <h4 class="card-title">{{ contact.fullName }}</h4>
+      <table class="table">
+        <tr>
+          <th>First Name</th>
+          <td>{{contact.firstName}}</td>
+        </tr>
+        <tr>
+          <th>Last Name</th>
+          <td>{{contact.lastName}}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{contact.email}}</td>
+        </tr>
+      </table>
+      <a class="btn btn-success" (click)="editContact()" >Edit</a>
+      <a class="btn btn-warning" (click)="deleteContact()" >Delete</a>
+    </div>
+  </div>
+  </div>
+  
