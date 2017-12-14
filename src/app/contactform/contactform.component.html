@@ -1,3 +1,58 @@
-<p>
-  contactform works!
-</p>
+<div class="alert alert-success" role="alert">
+  <strong>Well done!</strong> Contact saved.
+</div>
+<section>
+<form novalidate [formGroup]="contactform" (ngSubmit)="onSubmit()">
+  
+    <div class="col-md-6 mb-3">
+      <label for="firstName">First name</label>
+      <input type="text" formControlName="firstName"class="form-control " id="firstName" placeholder="First name"  required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="lastName">Last name</label>
+      <input type="text" class="form-control " formControlName="lastName" id="lastName" placeholder="Last name"  required>
+    </div>
+  
+    <div class="col-md-6 mb-3">
+      <label for="email">E-mail</label>
+      <input type="text" class="form-control " formControlName="email" id="email" placeholder="exemple@exemple.exemple" required>
+    </div>
+      <div class="col-md-6 mb-3">
+        <label for="age">Age</label>
+        <input type="text" class="form-control " formControlName="age" id="age" placeholder="Age" required>
+      </div> 
+    
+    <div class="col-md-6 mb-3">
+      <label for="persPhone">Personal phone number</label>
+      <input type="text" class="form-control "formControlName="persoPhone" id="persoPhone" placeholder="Personal phone number" required>
+     
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="proPhone">Pro phone number</label>
+      <input type="text" class="form-control " id="proPhone" formControlName="proPhone" placeholder="Pro phone number" >
+     
+    </div>
+
+    
+    <fieldset class="form-group row col-md-6 mb-3"  >
+      <legend class="col-form-legend col-sm-2">Gender</legend>
+      <div class="col-sm-10" formControlName="gender">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="Male" id="Male" value="male" checked>
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="female" id="Female" value="female">
+            Female
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+    
+  <button class="btn btn-primary" type="submit">Save</button>
+</form>
+</section>
